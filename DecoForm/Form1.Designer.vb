@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.RichTextBox1 = New System.Windows.Forms.RichTextBox()
+        Me.InfoTextBox = New System.Windows.Forms.RichTextBox()
         Me.clearDecoParamButton = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.setDecoParamButton = New System.Windows.Forms.Button()
@@ -48,15 +48,15 @@ Partial Class Form1
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Decoration Specification Dashboard"
         '
-        'RichTextBox1
+        'InfoTextBox
         '
-        Me.RichTextBox1.BackColor = System.Drawing.SystemColors.Info
-        Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.RichTextBox1.Location = New System.Drawing.Point(6, 145)
-        Me.RichTextBox1.Name = "RichTextBox1"
-        Me.RichTextBox1.Size = New System.Drawing.Size(470, 104)
-        Me.RichTextBox1.TabIndex = 1
-        Me.RichTextBox1.Text = ""
+        Me.InfoTextBox.BackColor = System.Drawing.SystemColors.Info
+        Me.InfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.InfoTextBox.Location = New System.Drawing.Point(6, 145)
+        Me.InfoTextBox.Name = "InfoTextBox"
+        Me.InfoTextBox.Size = New System.Drawing.Size(470, 104)
+        Me.InfoTextBox.TabIndex = 1
+        Me.InfoTextBox.Text = ""
         '
         'clearDecoParamButton
         '
@@ -170,7 +170,7 @@ Partial Class Form1
         Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
         Me.GroupBox2.Controls.Add(Me.setDecoParamButton)
         Me.GroupBox2.Controls.Add(Me.clearDecoParamButton)
-        Me.GroupBox2.Controls.Add(Me.RichTextBox1)
+        Me.GroupBox2.Controls.Add(Me.InfoTextBox)
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 370)
         Me.GroupBox2.Name = "GroupBox2"
@@ -190,6 +190,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximumSize = New System.Drawing.Size(547, 697)
         Me.Name = "Form1"
         Me.Text = "Decorations Specification Dashboard"
         Me.GroupBox1.ResumeLayout(False)
@@ -200,7 +201,7 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents Label1 As Label
-    Friend WithEvents RichTextBox1 As RichTextBox
+    Friend WithEvents InfoTextBox As RichTextBox
     Friend WithEvents setDecoParamButton As Button
     Friend WithEvents clearDecoParamButton As Button
     Friend WithEvents GroupBox1 As GroupBox

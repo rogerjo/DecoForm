@@ -48,13 +48,14 @@ Public Class Form1
             MsgBox("Surface finish has been set to 'SEE DECORATION SPECIFICATION'",, "Script Message")
             asyncConnection.Disconnect(1)
 
+            Call getCurrentParameterSetting()
+
         Catch ex As Exception
         End Try
     End Sub
 
     Public Sub clearParameter()
         Dim Paraname As String = "SURFACE_FINISH"
-
         Try
             asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
             session = asyncConnection.Session
@@ -88,6 +89,8 @@ Public Class Form1
 
             MsgBox("Surface finish has been set to '-'",, "Script Message")
             asyncConnection.Disconnect(1)
+
+            Call getCurrentParameterSetting()
 
         Catch ex As Exception
         End Try
@@ -269,7 +272,53 @@ Public Class Form1
 
     End Sub
 
-    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        InfoTextBox.Text = "Checking if parameter is set..."
+        Call getCurrentParameterSetting()
+
+    End Sub
+
+    Private Sub getCurrentParameterSetting()
+        Dim Paraname As String = "SURFACE_FINISH"
+        Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
+
+            If model Is Nothing Then
+                MsgBox("Model is not present",, "Script message")
+                Environment.Exit(0)
+            End If
+
+            If (Not model.Type = EpfcModelType.EpfcMDL_PART) And (Not model.Type = EpfcModelType.EpfcMDL_ASSEMBLY) Then
+                MsgBox("Model is not a solid",, "Script message")
+                Environment.Exit(0)
+            End If
+
+            If Not activeserver.IsObjectCheckedOut(activeserver.ActiveWorkspace, model.FileName) Then
+                MsgBox("Please check out model first...",, "Script Message")
+                Environment.Exit(0)
+            End If
+
+            paramown = model
+            ipparam = paramown.GetParam(Paraname)
+
+            If ipparam.GetScaledValue.StringValue = "SEE DECORATION SPECIFICATION" Then
+                InfoTextBox.Text = "Surface finish is set to " & vbCrLf & "'SEE DECORATION SPECIFICATION'"
+                InfoTextBox.BackColor = Color.LightGreen
+
+            ElseIf ipparam.GetScaledValue.StringValue = "-" Then
+                InfoTextBox.Text = "Surface finish is set to '-'" & vbCrLf & "Remember to click 'Set Deco Spec Parameter'"
+                InfoTextBox.BackColor = Color.Crimson
+
+            End If
+
+
+            asyncConnection.Disconnect(1)
+
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
