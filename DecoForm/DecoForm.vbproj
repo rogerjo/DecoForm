@@ -129,6 +129,15 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue_plus.ico" />
+    <None Include="Resources\blue_minus.ico" />
+    <None Include="Resources\white_back.ico" />
+    <None Include="Resources\recycle_trash_can.ico" />
+    <None Include="Resources\paint_red.ico" />
+    <None Include="Resources\green_paint.ico" />
+    <None Include="Resources\paint_yellow2.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
