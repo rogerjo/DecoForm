@@ -121,22 +121,28 @@
   <data name="recycle_trash_can" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recycle_trash_can.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="green_paint" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\green_paint.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="white_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\white_back.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="paint_yellow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_yellow2.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="green_paint" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\green_paint.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="paint_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paint_red.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="white_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\white_back.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="blue_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\blue_plus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wordicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wordicon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="blue_minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\blue_minus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="blue_plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\blue_plus.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="word2013icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\word2013icon.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

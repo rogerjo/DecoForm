@@ -13,6 +13,7 @@ Public Class Form1
     Dim Moditem As CMpfcModelItem
 
 
+
     Public Sub setParameter()
 
         Dim Paraname As String = "SURFACE_FINISH"
@@ -320,5 +321,13 @@ Public Class Form1
 
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub startWordButton_Click(sender As Object, e As EventArgs) Handles startWordButton.Click
+        Dim oWord
+        Dim odoc
+        oWord = CreateObject("Word.Application")
+        oWord.Visible = True
+        odoc = oWord.Documents.Add
     End Sub
 End Class

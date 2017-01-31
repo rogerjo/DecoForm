@@ -25,15 +25,16 @@ Partial Class Form1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.InfoTextBox = New System.Windows.Forms.RichTextBox()
-        Me.clearDecoParamButton = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.startWordButton = New System.Windows.Forms.Button()
         Me.setDecoParamButton = New System.Windows.Forms.Button()
+        Me.clearDecoParamButton = New System.Windows.Forms.Button()
         Me.clearAppearance = New System.Windows.Forms.Button()
         Me.setWhiteBack = New System.Windows.Forms.Button()
         Me.setYellowColor = New System.Windows.Forms.Button()
         Me.setRedColor = New System.Windows.Forms.Button()
         Me.setGreenColor = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -58,19 +59,6 @@ Partial Class Form1
         Me.InfoTextBox.TabIndex = 1
         Me.InfoTextBox.Text = ""
         '
-        'clearDecoParamButton
-        '
-        Me.clearDecoParamButton.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.clearDecoParamButton.Image = Global.DecoForm.My.Resources.Resources.blue_minus
-        Me.clearDecoParamButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.clearDecoParamButton.Location = New System.Drawing.Point(244, 33)
-        Me.clearDecoParamButton.Name = "clearDecoParamButton"
-        Me.clearDecoParamButton.Size = New System.Drawing.Size(232, 106)
-        Me.clearDecoParamButton.TabIndex = 3
-        Me.clearDecoParamButton.Text = "Clear Deco Spec Parameter"
-        Me.clearDecoParamButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.clearDecoParamButton.UseVisualStyleBackColor = True
-        '
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.ButtonFace
@@ -87,6 +75,33 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Coloring Actions"
         '
+        'GroupBox2
+        '
+        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.GroupBox2.Controls.Add(Me.setDecoParamButton)
+        Me.GroupBox2.Controls.Add(Me.clearDecoParamButton)
+        Me.GroupBox2.Controls.Add(Me.InfoTextBox)
+        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 370)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(493, 255)
+        Me.GroupBox2.TabIndex = 5
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Parameter Control"
+        '
+        'startWordButton
+        '
+        Me.startWordButton.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.startWordButton.Image = Global.DecoForm.My.Resources.Resources.word2013icon
+        Me.startWordButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.startWordButton.Location = New System.Drawing.Point(102, 641)
+        Me.startWordButton.Name = "startWordButton"
+        Me.startWordButton.Size = New System.Drawing.Size(308, 84)
+        Me.startWordButton.TabIndex = 5
+        Me.startWordButton.Text = "Start MS Word"
+        Me.startWordButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.startWordButton.UseVisualStyleBackColor = True
+        '
         'setDecoParamButton
         '
         Me.setDecoParamButton.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -100,14 +115,27 @@ Partial Class Form1
         Me.setDecoParamButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.setDecoParamButton.UseVisualStyleBackColor = True
         '
+        'clearDecoParamButton
+        '
+        Me.clearDecoParamButton.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.clearDecoParamButton.Image = Global.DecoForm.My.Resources.Resources.blue_minus
+        Me.clearDecoParamButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.clearDecoParamButton.Location = New System.Drawing.Point(244, 33)
+        Me.clearDecoParamButton.Name = "clearDecoParamButton"
+        Me.clearDecoParamButton.Size = New System.Drawing.Size(232, 106)
+        Me.clearDecoParamButton.TabIndex = 3
+        Me.clearDecoParamButton.Text = "Clear Deco Spec Parameter"
+        Me.clearDecoParamButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.clearDecoParamButton.UseVisualStyleBackColor = True
+        '
         'clearAppearance
         '
         Me.clearAppearance.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.clearAppearance.Image = Global.DecoForm.My.Resources.Resources.recycle_trash_can
         Me.clearAppearance.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.clearAppearance.Location = New System.Drawing.Point(25, 170)
+        Me.clearAppearance.Location = New System.Drawing.Point(28, 170)
         Me.clearAppearance.Name = "clearAppearance"
-        Me.clearAppearance.Size = New System.Drawing.Size(203, 100)
+        Me.clearAppearance.Size = New System.Drawing.Size(200, 100)
         Me.clearAppearance.TabIndex = 4
         Me.clearAppearance.Text = "Clear Appearance"
         Me.clearAppearance.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -118,9 +146,9 @@ Partial Class Form1
         Me.setWhiteBack.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.setWhiteBack.Image = Global.DecoForm.My.Resources.Resources.white_back
         Me.setWhiteBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.setWhiteBack.Location = New System.Drawing.Point(265, 170)
+        Me.setWhiteBack.Location = New System.Drawing.Point(268, 170)
         Me.setWhiteBack.Name = "setWhiteBack"
-        Me.setWhiteBack.Size = New System.Drawing.Size(203, 100)
+        Me.setWhiteBack.Size = New System.Drawing.Size(200, 100)
         Me.setWhiteBack.TabIndex = 3
         Me.setWhiteBack.Text = "White background"
         Me.setWhiteBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -165,34 +193,22 @@ Partial Class Form1
         Me.setGreenColor.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.setGreenColor.UseVisualStyleBackColor = True
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.GroupBox2.Controls.Add(Me.setDecoParamButton)
-        Me.GroupBox2.Controls.Add(Me.clearDecoParamButton)
-        Me.GroupBox2.Controls.Add(Me.InfoTextBox)
-        Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 370)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(493, 255)
-        Me.GroupBox2.TabIndex = 5
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Parameter Control"
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveBorder
-        Me.ClientSize = New System.Drawing.Size(521, 637)
+        Me.ClientSize = New System.Drawing.Size(524, 740)
+        Me.Controls.Add(Me.startWordButton)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Label1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximumSize = New System.Drawing.Size(547, 697)
+        Me.MaximumSize = New System.Drawing.Size(550, 800)
         Me.Name = "Form1"
         Me.Text = "Decorations Specification Dashboard"
+        Me.TopMost = True
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -211,4 +227,5 @@ Partial Class Form1
     Friend WithEvents setRedColor As Button
     Friend WithEvents setGreenColor As Button
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents startWordButton As Button
 End Class
