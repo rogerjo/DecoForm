@@ -55,7 +55,7 @@ Partial Class Form1
         Me.InfoTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.InfoTextBox.Location = New System.Drawing.Point(6, 145)
         Me.InfoTextBox.Name = "InfoTextBox"
-        Me.InfoTextBox.Size = New System.Drawing.Size(470, 104)
+        Me.InfoTextBox.Size = New System.Drawing.Size(470, 114)
         Me.InfoTextBox.TabIndex = 1
         Me.InfoTextBox.Text = ""
         '
@@ -84,23 +84,23 @@ Partial Class Form1
         Me.GroupBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(12, 370)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(493, 255)
+        Me.GroupBox2.Size = New System.Drawing.Size(493, 265)
         Me.GroupBox2.TabIndex = 5
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Parameter Control"
         '
         'startWordButton
         '
+        Me.startWordButton.BackColor = System.Drawing.SystemColors.ButtonFace
+        Me.startWordButton.FlatAppearance.BorderSize = 0
         Me.startWordButton.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.startWordButton.Image = Global.DecoForm.My.Resources.Resources.word2013icon
-        Me.startWordButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter
-        Me.startWordButton.Location = New System.Drawing.Point(102, 641)
+        Me.startWordButton.Image = Global.DecoForm.My.Resources.Resources.wordicon1
+        Me.startWordButton.Location = New System.Drawing.Point(130, 647)
         Me.startWordButton.Name = "startWordButton"
-        Me.startWordButton.Size = New System.Drawing.Size(308, 84)
+        Me.startWordButton.Size = New System.Drawing.Size(250, 80)
         Me.startWordButton.TabIndex = 5
-        Me.startWordButton.Text = "Start MS Word"
         Me.startWordButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.startWordButton.UseVisualStyleBackColor = True
+        Me.startWordButton.UseVisualStyleBackColor = False
         '
         'setDecoParamButton
         '

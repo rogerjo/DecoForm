@@ -1,0 +1,218 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DecoFormWPF"
+        mc:Ignorable="d"
+        Title="Axis"
+        Height="550"
+        Width="450"
+        Loaded='Window_Loaded'
+        ResizeMode='NoResize'
+        Topmost='True'>
+
+    <Window.Resources>
+        <Style TargetType='Button'>
+            <Setter Property='Margin'
+                    Value='10' />
+            <Setter Property='Padding'
+                    Value='11' />
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height='43*' />
+            <RowDefinition Height='150*' />
+            <RowDefinition Height='150*' />
+            <RowDefinition Height='86*' />
+            <RowDefinition Height='86*' />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row='0'
+               HorizontalAlignment='Left'
+               FontWeight='Bold'
+               FontSize='16'
+               VerticalContentAlignment='Center'
+               Margin='0,0,0,0.333'
+               Width='281'>Decoration Specification Dashboard</Label>
+
+        <Button x:Name='setGreenColor'
+                Grid.Row='1'
+                HorizontalAlignment='Left'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Width='110'>
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintGreen.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'>Set Green</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+        <Button x:Name='setRedColor'
+                Grid.Row='1'
+                HorizontalAlignment='Right'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Width='110'>
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintRed.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'>Set Red</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+        <Button x:Name='setYellowColor'
+                Grid.Row='1'
+                HorizontalAlignment='Center'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Width='110'>
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintYellow.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'>Set Yellow</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+        <TextBox x:Name='InfoTextBox'
+                 Text='TextBox'
+                 Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
+                 Grid.Row='4'
+                 Margin='10,11,9.667,10'
+                 FontWeight='Bold'
+                 FontSize='14' />
+        <Button x:Name='setWhiteBack'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Grid.Row='2'
+                HorizontalAlignment='Left'
+                Width='126'
+                Margin='70,8.667,0,10'>
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintWhiteBack.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Margin='0,20,0,0'>Set White Background</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+        <Button x:Name='setDecoParamButton'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Grid.Row='3'
+                HorizontalAlignment='Left'
+                Width='180'
+                Margin='10,10,0,10'>
+            <Button.Content>
+                <Grid>
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width='1*' />
+                        <ColumnDefinition Width='2*' />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Source='Icons/FormAdd.png'
+                           Margin='0,0,10,0' />
+                    <TextBlock Grid.Column='1'
+                               HorizontalAlignment="Right"
+                               VerticalAlignment='Center'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Grid.ColumnSpan='1'>Set Surface Finish Parameter</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+
+        <Button x:Name='clearDecoParamButton'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Grid.Row='3'
+                HorizontalAlignment='Right'
+                Width='180'
+                Margin='0,10,9.667,10'>
+            <Button.Content>
+                <Grid>
+                    <!--<Grid.RowDefinitions>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width='1*' />
+                        <ColumnDefinition Width='2*' />
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Column="0"
+                           Source='Icons/FormRemove.png'
+                           Margin='0,0,10,0' />
+                    <TextBlock Grid.Column='1'
+                               HorizontalAlignment="Right"
+                               VerticalAlignment='Center'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Grid.ColumnSpan='1'>Clear Surface Finish Parameter</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+        <Button x:Name='clearAppearance'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Grid.Row='2'
+                HorizontalAlignment='Right'
+                Width='126'
+                Margin='10,8.667,70,10'>
+            <Button.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/Clean.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Margin='0,20,0,0'>Clear All Appearance</TextBlock>
+                </Grid>
+            </Button.Content>
+        </Button>
+
+    </Grid>
+</Window>
