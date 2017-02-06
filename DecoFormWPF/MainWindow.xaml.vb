@@ -98,41 +98,13 @@ Class MainWindow
         End Try
     End Sub
 
-    'Private Sub clearDecoParamButton_Click(sender As Object, e As EventArgs) Handles clearDecoParamButton.Click
-    '    Call clearParameter()
-    'End Sub
-
-    'Private Sub setDecoParamButton_Click(sender As Object, e As EventArgs) Handles setDecoParamButton.Click
-    '    Call setParameter()
-    'End Sub
-
-    'Private Sub setGreenColor_Click(sender As Object, e As EventArgs) Handles setGreenColor.Click
-    '    Call setGreenColorMacro()
-    'End Sub
-
-    'Private Sub setYellowColor_Click(sender As Object, e As EventArgs) Handles setYellowColor.Click
-    '    Call setYellowColorMacro()
-    'End Sub
-
-    'Private Sub setRedColor_Click(sender As Object, e As EventArgs) Handles setRedColor.Click
-    '    Call setRedColorMacro()
-    'End Sub
-    'Private Sub setWhiteBack_Click(sender As Object, e As EventArgs) Handles setWhiteBack.Click
-    '    Call setWhiteBackMacro()
-    'End Sub
-
-    'Private Sub clearAppearance_Click(sender As Object, e As EventArgs) Handles clearAppearance.Click
-    '    Call clearAppearanceMacro()
-    'End Sub
-
-
     Private Sub setGreenColorMacro()
-        asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-        session = asyncConnection.Session
-        activeserver = session.GetActiveServer
-        model = session.CurrentModel
 
         Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -153,12 +125,12 @@ Class MainWindow
     End Sub
 
     Private Sub setYellowColorMacro()
-        asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-        session = asyncConnection.Session
-        activeserver = session.GetActiveServer
-        model = session.CurrentModel
 
         Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -179,12 +151,12 @@ Class MainWindow
     End Sub
 
     Private Sub setRedColorMacro()
-        asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-        session = asyncConnection.Session
-        activeserver = session.GetActiveServer
-        model = session.CurrentModel
 
         Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -205,12 +177,12 @@ Class MainWindow
     End Sub
 
     Private Sub setWhiteBackMacro()
-        asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-        session = asyncConnection.Session
-        activeserver = session.GetActiveServer
-        model = session.CurrentModel
 
         Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Trail `UI Desktop` `UI Desktop` `PREVIEW_POPUP_TIMER` \"
             macrostring = macrostring & vbCrLf
@@ -227,10 +199,7 @@ Class MainWindow
             macrostring = macrostring & "~ Select `ribbon_options_dialog` `colors_layouts.Color_scheme_optMenu` 1 `2`;\"
             macrostring = macrostring & vbCrLf
             macrostring = macrostring & "~ Activate `ribbon_options_dialog` `OkPshBtn`;"
-            'macrostring = macrostring & vbCrLf
-            'macrostring = macrostring & "~ FocusIn `UI Message Dialog` `yes`;~ Activate `UI Message Dialog` `yes`;"
 
-            'MsgBox(macrostring)
 
             session.RunMacro(macrostring)
 
@@ -241,12 +210,12 @@ Class MainWindow
     End Sub
 
     Private Sub clearAppearanceMacro()
-        asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-        session = asyncConnection.Session
-        activeserver = session.GetActiveServer
-        model = session.CurrentModel
 
         Try
+            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            session = asyncConnection.Session
+            activeserver = session.GetActiveServer
+            model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `appl_casc`;\"
             macrostring = macrostring & vbCrLf
@@ -320,6 +289,7 @@ Class MainWindow
         Call getCurrentParameterSetting()
     End Sub
 
+    'Office Button implementation
     'Private Sub startWordButton_Click_1(sender As Object, e As RoutedEventArgs) Handles startWordButton.Click
     '    Dim oWord
     '    Dim odoc
