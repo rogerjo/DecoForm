@@ -64,6 +64,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="ToggleSwitch, Version=1.1.2.0, Culture=neutral, PublicKeyToken=8637099990568f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToggleSwitch.1.1.2\lib\net40-client\ToggleSwitch.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -135,6 +139,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <AppDesigner Include="My Project\" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -47,7 +47,7 @@ Class MainWindow
             paramval = Moditem.CreateStringParamValue(CStr("SEE DECORATION SPECIFICATION"))
             ipbaseparam.Value = paramval
 
-            MsgBox("Surface finish has been set to 'SEE DECORATION SPECIFICATION'",, "Script Message")
+            'MsgBox("Surface finish has been set to 'SEE DECORATION SPECIFICATION'",, "Script Message")
             asyncConnection.Disconnect(1)
 
             Call getCurrentParameterSetting()
@@ -89,7 +89,7 @@ Class MainWindow
             paramval = Moditem.CreateStringParamValue(CStr("-"))
             ipbaseparam.Value = paramval
 
-            MsgBox("Surface finish has been set to '-'",, "Script Message")
+            'MsgBox("Surface finish has been set to '-'",, "Script Message")
             asyncConnection.Disconnect(1)
 
             Call getCurrentParameterSetting()
@@ -271,11 +271,14 @@ Class MainWindow
 
             If ipparam.GetScaledValue.StringValue = "SEE DECORATION SPECIFICATION" Then
                 InfoTextBox.Text = "Surface finish is set to 'SEE DECORATION SPECIFICATION'"
-                InfoTextBox.Background = New SolidColorBrush(Colors.LightGreen)
+                InfoTextBox.Background = New SolidColorBrush(Color.FromArgb(255, 90, 165, 9))
+                myToggle.IsChecked = True
 
             ElseIf ipparam.GetScaledValue.StringValue = "-" Then
                 InfoTextBox.Text = "Surface finish is set to '-'" & vbCrLf & "Remember to click 'Set Surface Finish Parameter'"
-                InfoTextBox.Background = New SolidColorBrush(Colors.Tomato)
+                InfoTextBox.Background = New SolidColorBrush(Color.FromArgb(255, 184, 0, 0))
+                InfoTextBox.Foreground = New SolidColorBrush(Colors.White)
+                myToggle.IsChecked = False
             End If
 
             asyncConnection.Disconnect(1)
@@ -285,6 +288,7 @@ Class MainWindow
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
+
         InfoTextBox.Text = "Checking if parameter is set..."
         Call getCurrentParameterSetting()
     End Sub
@@ -318,11 +322,11 @@ Class MainWindow
         Call clearAppearanceMacro()
     End Sub
 
-    Private Sub setDecoParamButton_Click(sender As Object, e As RoutedEventArgs) Handles setDecoParamButton.Click
-        Call setParameter()
+    Private Sub myToggle_Unchecked(sender As Object, e As RoutedEventArgs) Handles myToggle.Unchecked
+        Call clearParameter()
     End Sub
 
-    Private Sub clearDecoParamButton_Click(sender As Object, e As RoutedEventArgs) Handles clearDecoParamButton.Click
-        Call clearParameter()
+    Private Sub myToggle_Checked(sender As Object, e As RoutedEventArgs) Handles myToggle.Checked
+        Call setParameter()
     End Sub
 End Class
