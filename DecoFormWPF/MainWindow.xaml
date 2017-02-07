@@ -8,8 +8,8 @@
         x:Class="MainWindow"
         mc:Ignorable="d"
         Title="Axis"
-        Height="550"
-        Width="450"
+        Height="500"
+        Width="320"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
         Topmost='True'>
@@ -45,8 +45,7 @@
                 Grid.Row='1'
                 HorizontalAlignment='Left'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='110'
-                Margin='10,10.667,0,9.333'>
+                Width='90'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -61,33 +60,11 @@
                            Margin='0,20,0,0'><Run Text='Set Green' /></TextBlock>
             </Grid>
         </Button>
-
-        <Button x:Name='setRedColor'
-                Grid.Row='1'
-                HorizontalAlignment='Right'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='110'
-                Margin='0,10.667,9.667,9.333'>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/PaintRed.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           Margin='0,20,0,0'><Run Text='Set Red' /></TextBlock>
-            </Grid>
-        </Button>
         <Button x:Name='setYellowColor'
                 Grid.Row='1'
                 HorizontalAlignment='Center'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='110'
-                Margin='167,10.667,167.667,9.333'>
+                Width='90'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -102,6 +79,26 @@
                            Margin='0,20,0,0'><Run Text='Set Yellow' /></TextBlock>
             </Grid>
         </Button>
+
+        <Button x:Name='setRedColor'
+                Grid.Row='1'
+                HorizontalAlignment='Right'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                Width='90'>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0"
+                       Source='Icons/PaintRed.png'
+                       VerticalAlignment='Top' />
+                <TextBlock Grid.Row="1"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment='Bottom'
+                           Margin='0,20,0,0'><Run Text='Set Red' /></TextBlock>
+            </Grid>
+        </Button>
         <TextBox x:Name='InfoTextBox'
                  Text='TextBox'
                  Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
@@ -113,8 +110,7 @@
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                 Grid.Row='2'
                 HorizontalAlignment='Left'
-                Width='126'
-                Margin='70,8.667,0,9.333'>
+                Width='90'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -135,8 +131,7 @@
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                 Grid.Row='2'
                 HorizontalAlignment='Right'
-                Width='126'
-                Margin='0,8.667,69.667,9.333'>
+                Width='90'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -154,17 +149,13 @@
             </Grid>
         </Button>
         <Label x:Name='label'
-               Content='Toggle on to use Decoration Specification'
+               Content='Toggle switch on to use Decoration Specification'
                Height='27'
                Margin='10,0,4.667,1'
                Grid.Row='3'
                VerticalAlignment='Bottom'
                HorizontalAlignment='Center' />
-        <CheckBox>
-            <CheckBox.DataContext>
-                <ToggleSwitch:HorizontalToggleSwitch />
-            </CheckBox.DataContext>
-        </CheckBox>
+
         <ToggleSwitch:HorizontalToggleSwitch x:Name='myToggle'
                                              HorizontalAlignment='Center'
                                              Height='30'
