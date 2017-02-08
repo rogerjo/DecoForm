@@ -38,8 +38,7 @@ Class MainWindow
                 Environment.Exit(0)
             End If
 
-            paramown = model
-            ipparam = paramown.GetParam(Paraname)
+            ipparam = model.GetParam(Paraname)
             ipbaseparam = ipparam
             Moditem = New CMpfcModelItem
 
@@ -79,8 +78,8 @@ Class MainWindow
                 Environment.Exit(0)
             End If
 
-            paramown = model
-            ipparam = paramown.GetParam(Paraname)
+
+            ipparam = model.GetParam(Paraname)
             ipbaseparam = ipparam
 
             Moditem = New CMpfcModelItem
@@ -269,12 +268,8 @@ Class MainWindow
                 Environment.Exit(0)
             End If
 
-            paramown = model
-            ipparam = paramown.GetParam(Paraname)
 
-            If ipparam Is Nothing Then
-
-            End If
+            ipparam = model.GetParam(Paraname)
 
 
             If ipparam.GetScaledValue.StringValue = "SEE DECORATION SPECIFICATION" Then
@@ -292,7 +287,7 @@ Class MainWindow
             asyncConnection.Disconnect(1)
 
         Catch ex As Exception
-            MsgBox("Save your model first",, "Script Message")
+
         End Try
     End Sub
 
