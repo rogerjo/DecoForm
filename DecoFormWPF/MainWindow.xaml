@@ -8,11 +8,12 @@
         x:Class="MainWindow"
         mc:Ignorable="d"
         Title="Axis"
-        Height="500"
-        Width="320"
+        Height="550"
+        Width="350"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
-        Topmost='True'>
+        Topmost='True'
+        Icon='Icons/DomeCamera.ico'>
 
     <Window.Resources>
         <Style TargetType='{x:Type Button}'>
@@ -25,11 +26,11 @@
 
     <Grid x:Name='myGrid'>
         <Grid.RowDefinitions>
-            <RowDefinition Height='43*' />
-            <RowDefinition Height='152*' />
-            <RowDefinition Height='152*' />
-            <RowDefinition Height='95*' />
-            <RowDefinition Height='80*' />
+            <RowDefinition Height='39*' />
+            <RowDefinition Height='148*' />
+            <RowDefinition Height='133*' />
+            <RowDefinition Height='69*' />
+            <RowDefinition Height='82*' />
         </Grid.RowDefinitions>
 
         <Label Grid.Row='0'
@@ -45,7 +46,8 @@
                 Grid.Row='1'
                 HorizontalAlignment='Left'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'>
+                Width='90'
+                Height='120'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -64,7 +66,8 @@
                 Grid.Row='1'
                 HorizontalAlignment='Center'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'>
+                Width='90'
+                Height='120'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -84,7 +87,8 @@
                 Grid.Row='1'
                 HorizontalAlignment='Right'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'>
+                Width='90'
+                Height='120'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -103,14 +107,15 @@
                  Text='TextBox'
                  Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
                  Grid.Row='4'
-                 Margin='10,11,9.667,10'
+                 Margin='10,10,9.667,10'
                  FontWeight='Bold'
                  FontSize='14' />
         <Button x:Name='setWhiteBack'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                 Grid.Row='2'
                 HorizontalAlignment='Left'
-                Width='90'>
+                Width='90'
+                Height='120'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -131,7 +136,8 @@
                 Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
                 Grid.Row='2'
                 HorizontalAlignment='Right'
-                Width='90'>
+                Width='90'
+                Height='120'>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -149,20 +155,23 @@
             </Grid>
         </Button>
         <Label x:Name='label'
-               Content='Toggle switch on to use Decoration Specification'
+               Content='Toggle switch to use Decoration Specification'
                Height='27'
-               Margin='10,0,4.667,1'
                Grid.Row='3'
-               VerticalAlignment='Bottom'
-               HorizontalAlignment='Center' />
+               VerticalAlignment='Top'
+               HorizontalAlignment='Center'
+               Width='266'
+               Margin='0,10,0,0'
+               FontWeight='Bold' />
 
         <ToggleSwitch:HorizontalToggleSwitch x:Name='myToggle'
                                              HorizontalAlignment='Center'
                                              Height='30'
                                              Grid.Row='3'
-                                             VerticalAlignment='Center'
+                                             VerticalAlignment='Bottom'
                                              Width='120'
                                              FontFamily='Segoe UI'
-                                             FontSize='16' />
+                                             FontSize='16'
+                                             Margin='0,0,0,5' />
     </Grid>
 </Window>

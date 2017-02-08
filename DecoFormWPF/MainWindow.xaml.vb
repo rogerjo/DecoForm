@@ -9,7 +9,6 @@ Class MainWindow
     Dim ipparam As IpfcParameter
     Dim ipbaseparam As IpfcBaseParameter
     Dim paramval As IpfcParamValue
-
     Dim session As IpfcBaseSession
     Dim Moditem As CMpfcModelItem
 
@@ -118,11 +117,15 @@ Class MainWindow
 
             session.RunMacro(macrostring)
 
+
         Catch ex As Exception
 
         End Try
 
     End Sub
+
+
+
 
     Private Sub setYellowColorMacro()
 
@@ -269,13 +272,18 @@ Class MainWindow
             paramown = model
             ipparam = paramown.GetParam(Paraname)
 
+            If ipparam Is Nothing Then
+
+            End If
+
+
             If ipparam.GetScaledValue.StringValue = "SEE DECORATION SPECIFICATION" Then
-                InfoTextBox.Text = "Surface finish is set to 'SEE DECORATION SPECIFICATION'"
+                InfoTextBox.Text = "Surface finish is set to" & vbCrLf & "'SEE DECORATION SPECIFICATION'"
                 InfoTextBox.Background = New SolidColorBrush(Color.FromArgb(255, 90, 165, 9))
                 myToggle.IsChecked = True
 
             ElseIf ipparam.GetScaledValue.StringValue = "-" Then
-                InfoTextBox.Text = "Surface finish is set to '-'" & vbCrLf & "Remember to click 'Set Surface Finish Parameter'"
+                InfoTextBox.Text = "Surface finish is set to '-'" & vbCrLf & "Remember to use the switch above."
                 InfoTextBox.Background = New SolidColorBrush(Color.FromArgb(255, 184, 0, 0))
                 InfoTextBox.Foreground = New SolidColorBrush(Colors.White)
                 myToggle.IsChecked = False
@@ -284,6 +292,7 @@ Class MainWindow
             asyncConnection.Disconnect(1)
 
         Catch ex As Exception
+            MsgBox("Save your model first",, "Script Message")
         End Try
     End Sub
 
@@ -291,7 +300,9 @@ Class MainWindow
 
         InfoTextBox.Text = "Checking if parameter is set..."
         Call getCurrentParameterSetting()
+        
     End Sub
+
 
     'Office Button implementation
     'Private Sub startWordButton_Click_1(sender As Object, e As RoutedEventArgs) Handles startWordButton.Click
