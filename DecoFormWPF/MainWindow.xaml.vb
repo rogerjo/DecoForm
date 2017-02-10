@@ -295,7 +295,7 @@ Class MainWindow
 
         InfoTextBox.Text = "Checking if parameter is set..."
         Call getCurrentParameterSetting()
-        
+
     End Sub
 
 
@@ -337,6 +337,7 @@ Class MainWindow
     End Sub
 
     Private Sub helpButton_Click(sender As Object, e As RoutedEventArgs) Handles helpButton.Click
-
+        Dim target = "\\Storage03\hw-apps\ptc\decoration_specification\CreoApplication\helpfiles\helpfile.html"
+        Process.Start(target)
     End Sub
 End Class
