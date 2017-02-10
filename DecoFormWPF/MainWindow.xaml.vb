@@ -335,4 +335,8 @@ Class MainWindow
     Private Sub myToggle_Checked(sender As Object, e As RoutedEventArgs) Handles myToggle.Checked
         Call setParameter()
     End Sub
+
+    Private Sub helpButton_Click(sender As Object, e As RoutedEventArgs) Handles helpButton.Click
+
+    End Sub
 End Class

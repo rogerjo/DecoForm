@@ -8,7 +8,7 @@
         x:Class="MainWindow"
         mc:Ignorable="d"
         Title="Axis"
-        Height="550"
+        Height="600"
         Width="350"
         Loaded='Window_Loaded'
         ResizeMode='NoResize'
@@ -27,10 +27,10 @@
     <Grid x:Name='myGrid'>
         <Grid.RowDefinitions>
             <RowDefinition Height='39*' />
-            <RowDefinition Height='148*' />
-            <RowDefinition Height='133*' />
-            <RowDefinition Height='69*' />
-            <RowDefinition Height='82*' />
+            <RowDefinition Height='160*' />
+            <RowDefinition Height='160*' />
+            <RowDefinition Height='77*' />
+            <RowDefinition Height='91*' />
         </Grid.RowDefinitions>
 
         <Label Grid.Row='0'
@@ -38,122 +38,151 @@
                FontWeight='Bold'
                FontSize='16'
                VerticalContentAlignment='Center'
-               Margin='0,0,0,0.333'
-               Width='281'
-               Content='Decoration Specification Dashboard' />
-
-        <Button x:Name='setGreenColor'
-                Grid.Row='1'
-                HorizontalAlignment='Left'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'
-                Height='120'>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/PaintGreen.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           Margin='0,20,0,0'><Run Text='Set Green' /></TextBlock>
-            </Grid>
-        </Button>
-        <Button x:Name='setYellowColor'
-                Grid.Row='1'
-                HorizontalAlignment='Center'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'
-                Height='120'>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/PaintYellow.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           Margin='0,20,0,0'><Run Text='Set Yellow' /></TextBlock>
-            </Grid>
-        </Button>
-
-        <Button x:Name='setRedColor'
-                Grid.Row='1'
+               Width='280'
+               Content='Decoration Specification Dashboard'
+               Foreground='#FF506EBF' />
+        <Button x:Name='helpButton'
+                Grid.Row='0'
                 HorizontalAlignment='Right'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Width='90'
-                Height='120'>
+                Width='25'
+                Margin='5,5,10,5'
+                Height='25'
+                Padding='0'
+                Background='{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}'
+                BorderBrush='{x:Null}'
+                Foreground='{x:Null}'>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
                 </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/PaintRed.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           Margin='0,20,0,0'><Run Text='Set Red' /></TextBlock>
+                <Image Grid.Row='0'
+                       Source='Icons/HelpIcon.png' />
             </Grid>
         </Button>
-        <TextBox x:Name='InfoTextBox'
-                 Text='TextBox'
-                 Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
-                 Grid.Row='4'
-                 Margin='10,10,9.667,10'
-                 FontWeight='Bold'
-                 FontSize='14' />
-        <Button x:Name='setWhiteBack'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Grid.Row='2'
-                HorizontalAlignment='Left'
-                Width='90'
-                Height='120'>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/PaintWhiteBack.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           TextWrapping='Wrap'
-                           TextAlignment='Center'
-                           Margin='0,20,0,0'><Run Text='Set White Background' /></TextBlock>
-            </Grid>
-        </Button>
-        <Button x:Name='clearAppearance'
-                Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
-                Grid.Row='2'
-                HorizontalAlignment='Right'
-                Width='90'
-                Height='120'>
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <Image Grid.Row="0"
-                       Source='Icons/Clean.png'
-                       VerticalAlignment='Top' />
-                <TextBlock Grid.Row="1"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment='Bottom'
-                           TextWrapping='Wrap'
-                           TextAlignment='Center'
-                           Margin='0,20,0,0'><Run Text='Clear All Appearance' /></TextBlock>
-            </Grid>
-        </Button>
+        <StackPanel x:Name='firstrowstack'
+                    Orientation='Horizontal'
+                    HorizontalAlignment='Center'
+                    VerticalAlignment='Center'
+                    Grid.Row='1'
+                    Grid.RowSpan='1'>
+
+            <Button x:Name='setGreenColor'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Width='90'
+                    Height='125'>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintGreen.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'><Run Text='Set Green' /></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name='setYellowColor'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Width='90'
+                    Height='125'>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintYellow.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'><Run Text='Set Yellow' /></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name='setRedColor'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Width='90'
+                    Height='125'>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintRed.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               Margin='0,20,0,0'><Run Text='Set Red' /></TextBlock>
+                </Grid>
+            </Button>
+        </StackPanel>
+        <StackPanel x:Name='secondrowstack'
+                    Orientation='Horizontal'
+                    HorizontalAlignment='Center'
+                    VerticalAlignment='Center'
+                    Grid.Row='2'
+                    Grid.RowSpan='1'>
+
+            <Button x:Name='setWhiteBack'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    Width='90'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Height='125'>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/PaintWhiteBack.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Margin='0,20,0,0'><Run Text='Set White Background' /></TextBlock>
+                </Grid>
+            </Button>
+            <Button x:Name='clearAppearance'
+                    Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
+                    Margin='10'
+                    Width='90'
+                    HorizontalContentAlignment='Stretch'
+                    VerticalContentAlignment='Stretch'
+                    Height='125'>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <Image Grid.Row="0"
+                           Source='Icons/Clean.png'
+                           VerticalAlignment='Top' />
+                    <TextBlock Grid.Row="1"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment='Bottom'
+                               TextWrapping='Wrap'
+                               TextAlignment='Center'
+                               Margin='0,20,0,0'><Run Text='Clear All Appearance' /></TextBlock>
+                </Grid>
+            </Button>
+        </StackPanel>
         <Label x:Name='label'
                Content='Toggle switch to use Decoration Specification'
                Height='27'
@@ -161,9 +190,8 @@
                VerticalAlignment='Top'
                HorizontalAlignment='Center'
                Width='266'
-               Margin='0,10,0,0'
+               Margin='39,8,39,0'
                FontWeight='Bold' />
-
         <ToggleSwitch:HorizontalToggleSwitch x:Name='myToggle'
                                              HorizontalAlignment='Center'
                                              Height='30'
@@ -173,5 +201,18 @@
                                              FontFamily='Segoe UI'
                                              FontSize='16'
                                              Margin='0,0,0,5' />
+        <TextBox x:Name='InfoTextBox'
+                 Text='TextBox'
+                 Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
+                 Grid.Row='4'
+                 Margin='10,9.667,9.667,10'
+                 FontWeight='Bold'
+                 FontSize='14' />
+        <Separator Height='3'
+                   Grid.Row='3'
+                   VerticalAlignment='Top'
+                   HorizontalContentAlignment='Center'
+                   Margin='0' />
+
     </Grid>
 </Window>
