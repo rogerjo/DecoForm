@@ -50,7 +50,8 @@
                 Padding='0'
                 Background='{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}'
                 BorderBrush='{x:Null}'
-                Foreground='{x:Null}'>
+                Foreground='{x:Null}'
+                ToolTip="Show help">
             <Grid>
                 <Grid.RowDefinitions>
                 </Grid.RowDefinitions>
@@ -71,7 +72,9 @@
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
                     Width='90'
-                    Height='125'>
+                    Height='125'
+                    ToolTip="Sets the selected surfaces green">
+
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -85,6 +88,7 @@
                                VerticalAlignment='Bottom'
                                Margin='0,20,0,0'><Run Text='Set Green' /></TextBlock>
                 </Grid>
+
             </Button>
             <Button x:Name='setYellowColor'
                     Background='{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}'
@@ -92,7 +96,8 @@
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
                     Width='90'
-                    Height='125'>
+                    Height='125'
+                    ToolTip="Sets the selected surfaces yellow">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -113,7 +118,8 @@
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
                     Width='90'
-                    Height='125'>
+                    Height='125'
+                    ToolTip="Sets the selected surfaces red">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -142,7 +148,8 @@
                     Width='90'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Height='125'>
+                    Height='125'
+                    ToolTip="Sets the background in Creo to white">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -165,7 +172,8 @@
                     Width='90'
                     HorizontalContentAlignment='Stretch'
                     VerticalContentAlignment='Stretch'
-                    Height='125'>
+                    Height='125'
+                    ToolTip="Clears all model surface coloring and sets them to grey">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition />
@@ -200,7 +208,8 @@
                                              Width='120'
                                              FontFamily='Segoe UI'
                                              FontSize='16'
-                                             Margin='0,0,0,5' />
+                                             Margin='0,0,0,5'
+                                             ToolTip="Toggle the switch to set Surface finish parameter correctly" />
         <TextBox x:Name='InfoTextBox'
                  Text='TextBox'
                  Background='{DynamicResource {x:Static SystemColors.InfoBrushKey}}'
