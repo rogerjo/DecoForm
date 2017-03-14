@@ -1,4 +1,5 @@
-﻿Imports pfcls
+﻿Imports System.ComponentModel
+Imports pfcls
 
 Class MainWindow
 
@@ -13,10 +14,9 @@ Class MainWindow
     Dim Moditem As CMpfcModelItem
 
 
+    Public Sub StartApplicationAndConnect()
 
-    Public Sub setParameter()
 
-        Dim Paraname As String = "SURFACE_FINISH"
         Try
             asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
             session = asyncConnection.Session
@@ -37,7 +37,13 @@ Class MainWindow
                 MsgBox("Please check out model first...",, "Script Message")
                 Environment.Exit(0)
             End If
-
+        Catch ex As Exception
+            InfoTextBox.Text = "Sorry, something went wrong..."
+        End Try
+    End Sub
+    Public Sub setParameter()
+        Dim Paraname As String = "SURFACE_FINISH"
+        Try
             ipparam = model.GetParam(Paraname)
             ipbaseparam = ipparam
             Moditem = New CMpfcModelItem
@@ -46,7 +52,7 @@ Class MainWindow
             ipbaseparam.Value = paramval
 
             'MsgBox("Surface finish has been set to 'SEE DECORATION SPECIFICATION'",, "Script Message")
-            asyncConnection.Disconnect(1)
+            'asyncConnection.Disconnect(1)
 
             Call getCurrentParameterSetting()
 
@@ -57,26 +63,26 @@ Class MainWindow
     Public Sub clearParameter()
         Dim Paraname As String = "SURFACE_FINISH"
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
 
 
-            If model Is Nothing Then
-                MsgBox("Model is not present",, "Script message")
-                Environment.Exit(0)
-            End If
+            'If model Is Nothing Then
+            '    MsgBox("Model is not present",, "Script message")
+            '    Environment.Exit(0)
+            'End If
 
-            If (Not model.Type = EpfcModelType.EpfcMDL_PART) And (Not model.Type = EpfcModelType.EpfcMDL_ASSEMBLY) Then
-                MsgBox("Model is not a solid",, "Script message")
-                Environment.Exit(0)
-            End If
+            'If (Not model.Type = EpfcModelType.EpfcMDL_PART) And (Not model.Type = EpfcModelType.EpfcMDL_ASSEMBLY) Then
+            '    MsgBox("Model is not a solid",, "Script message")
+            '    Environment.Exit(0)
+            'End If
 
-            If Not activeserver.IsObjectCheckedOut(activeserver.ActiveWorkspace, model.FileName) Then
-                MsgBox("Please check out model first...",, "Script Message")
-                Environment.Exit(0)
-            End If
+            'If Not activeserver.IsObjectCheckedOut(activeserver.ActiveWorkspace, model.FileName) Then
+            '    MsgBox("Please check out model first...",, "Script Message")
+            '    Environment.Exit(0)
+            'End If
 
 
             ipparam = model.GetParam(Paraname)
@@ -88,7 +94,7 @@ Class MainWindow
             ipbaseparam.Value = paramval
 
             'MsgBox("Surface finish has been set to '-'",, "Script Message")
-            asyncConnection.Disconnect(1)
+            'asyncConnection.Disconnect(1)
 
             Call getCurrentParameterSetting()
 
@@ -99,10 +105,10 @@ Class MainWindow
     Private Sub setGreenColorMacro()
 
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -123,16 +129,13 @@ Class MainWindow
 
     End Sub
 
-
-
-
     Private Sub setYellowColorMacro()
 
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -155,10 +158,10 @@ Class MainWindow
     Private Sub setRedColorMacro()
 
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `user_custom_page_315894752:ProCmdViewGallery`;\"
             macrostring = macrostring & vbCrLf
@@ -181,10 +184,10 @@ Class MainWindow
     Private Sub setWhiteBackMacro()
 
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Trail `UI Desktop` `UI Desktop` `PREVIEW_POPUP_TIMER` \"
             macrostring = macrostring & vbCrLf
@@ -214,10 +217,10 @@ Class MainWindow
     Private Sub clearAppearanceMacro()
 
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
             Dim macrostring As String
             macrostring = "~ Select `main_dlg_cur` `appl_casc`;\"
             macrostring = macrostring & vbCrLf
@@ -247,27 +250,27 @@ Class MainWindow
 
     Private Sub getCurrentParameterSetting()
         Dim Paraname As String = "SURFACE_FINISH"
+
         Try
-            asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
-            session = asyncConnection.Session
-            activeserver = session.GetActiveServer
-            model = session.CurrentModel
+            'asyncConnection = (New CCpfcAsyncConnection).Connect(Nothing, Nothing, Nothing, Nothing)
+            'session = asyncConnection.Session
+            'activeserver = session.GetActiveServer
+            'model = session.CurrentModel
 
-            If model Is Nothing Then
-                MsgBox("Model is not present",, "Script message")
-                Environment.Exit(0)
-            End If
+            'If model Is Nothing Then
+            '    MsgBox("Model is not present",, "Script message")
+            '    Environment.Exit(0)
+            'End If
 
-            If (Not model.Type = EpfcModelType.EpfcMDL_PART) And (Not model.Type = EpfcModelType.EpfcMDL_ASSEMBLY) Then
-                MsgBox("Model is not a solid",, "Script message")
-                Environment.Exit(0)
-            End If
+            'If (Not model.Type = EpfcModelType.EpfcMDL_PART) And (Not model.Type = EpfcModelType.EpfcMDL_ASSEMBLY) Then
+            '    MsgBox("Model is not a solid",, "Script message")
+            '    Environment.Exit(0)
+            'End If
 
-            If Not activeserver.IsObjectCheckedOut(activeserver.ActiveWorkspace, model.FileName) Then
-                MsgBox("Please check out model first...",, "Script Message")
-                Environment.Exit(0)
-            End If
-
+            'If Not activeserver.IsObjectCheckedOut(activeserver.ActiveWorkspace, model.FileName) Then
+            '    MsgBox("Please check out model first...",, "Script Message")
+            '    Environment.Exit(0)
+            'End If
 
             ipparam = model.GetParam(Paraname)
 
@@ -284,7 +287,7 @@ Class MainWindow
                 myToggle.IsChecked = False
             End If
 
-            asyncConnection.Disconnect(1)
+            'asyncConnection.Disconnect(1)
 
         Catch ex As Exception
 
@@ -292,21 +295,11 @@ Class MainWindow
     End Sub
 
     Private Sub Window_Loaded(sender As Object, e As RoutedEventArgs)
-
         InfoTextBox.Text = "Checking if parameter is set..."
+        Call StartApplicationAndConnect()
         Call getCurrentParameterSetting()
 
     End Sub
-
-
-    'Office Button implementation
-    'Private Sub startWordButton_Click_1(sender As Object, e As RoutedEventArgs) Handles startWordButton.Click
-    '    Dim oWord
-    '    Dim odoc
-    '    oWord = CreateObject("Word.Application")
-    '    oWord.Visible = True
-    '    odoc = oWord.Documents.Add
-    'End Sub
 
     Private Sub setGreenColor_Click(sender As Object, e As RoutedEventArgs) Handles setGreenColor.Click
         Call setGreenColorMacro()
@@ -339,5 +332,13 @@ Class MainWindow
     Private Sub helpButton_Click(sender As Object, e As RoutedEventArgs) Handles helpButton.Click
         Dim target = "\\Storage03\hw-apps\ptc\decoration_specification\CreoApplication\helpfiles\helpfile.html"
         Process.Start(target)
+    End Sub
+
+
+    Private Sub MainWindow_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
+        Try
+            asyncConnection.Disconnect(1)
+        Catch
+        End Try
     End Sub
 End Class
